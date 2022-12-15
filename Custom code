@@ -1,0 +1,45 @@
+//For Main section
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+jQuery(function($){
+$('.openit').click(function(){
+$(this).closest('.elementor-section').next().slideToggle();
+$(this).toggleClass('opened');
+});
+$('.closebutton').click(function(){
+$(this).closest('.elementor-section').prev().find('.openit').click();
+});
+});
+});
+</script>
+
+
+//For Inner Section 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+jQuery(function($){
+$('.openit').click(function(){
+$(this).closest('.elementor-inner-section').next().slideToggle();
+$(this).toggleClass('opened');
+});
+$('.closebutton').click(function(){
+$(this).closest('.elementor-inner-section').prev().find('.openit').click();
+});
+});
+});
+</script>
+
+
+
+<style>
+.openit a, .openit svg, .openit i , .openit img, .closeit a, .closeit i, .closeit img{
+        cursor: pointer;
+        -webkit-transition: transform 0.34s ease;
+transition : transform 0.34s ease;
+    }
+.opened i , .opened img,.opened svg{
+        transform: rotate(90deg);
+    }
+</style>
+
